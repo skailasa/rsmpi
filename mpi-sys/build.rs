@@ -58,13 +58,13 @@ fn main() {
     let mut builder = cc::Build::new();
     builder.file("src/rsmpi.c");
 
-    let lib = archer2_x86_64_cray_mpich;
+    let lib = unix_x86_64_ompi;
 
     for inc in &lib.include_paths {
         builder.include(inc);
     }
 
-    builder.compiler("cc");
+    builder.compiler("mpicc");
     // builder.compiler("mpicc");
 
     let compiler = builder.try_get_compiler();
