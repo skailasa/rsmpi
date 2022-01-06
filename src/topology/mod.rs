@@ -57,6 +57,7 @@ pub trait AsCommunicator {
 /// Identifies a certain process within a communicator.
 pub type Rank = c_int;
 
+
 /// A built-in communicator, e.g. `MPI_COMM_WORLD`
 ///
 /// # Standard section(s)

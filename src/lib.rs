@@ -122,7 +122,7 @@
 //! [MPIspec]: http://www.mpi-forum.org/docs/docs.html
 
 use std::mem::MaybeUninit;
-use std::os::raw::c_int;
+use std::os::raw::{c_int, c_ulong};
 
 /// The raw C language MPI API
 ///
@@ -175,6 +175,8 @@ use crate::ffi::MPI_Aint;
 pub type Error = c_int;
 /// Encodes number of values in multi-value messages.
 pub type Count = c_int;
+/// Encodes number of values in very large multi-value messages
+pub type LongCount = c_ulong;
 /// Can be used to tag messages on the sender side and match on the receiver side.
 pub type Tag = c_int;
 /// An address in memory
